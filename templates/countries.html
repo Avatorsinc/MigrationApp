@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Countries</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Countries</h1>
+    <form method="POST">
+        <input type="text" name="country" placeholder="Enter a country" required>
+        <button type="submit">Add Country</button>
+    </form>
+    <ul>
+        {% for country in countries %}
+        <li>{{ country }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

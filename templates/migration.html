@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Migration Status</h1>
+    <p>Total Devices: {{ migration_status.total_devices }}</p>
+    <p>Devices Migrated: {{ migration_status.migrated_devices }}</p>
+    <div style="width: 100%; background-color: #e0e0e0;">
+        <div style="width: {{ progress }}%; background-color: green; text-align: center; color: white; padding: 5px;">
+            {{ progress | round(2) }}%
+        </div>
+    </div>
+    <form method="POST">
+        <input type="number" name="migrated_devices" placeholder="Enter migrated devices" required>
+        <button type="submit">Update Progress</button>
+    </form>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

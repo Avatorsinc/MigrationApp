@@ -1,0 +1,11 @@
+<h1>Chains</h1>
+<form method="POST">
+    <input type="text" name="chain" placeholder="Enter a chain" required>
+    <button type="submit">Add Chain</button>
+</form>
+<ul>
+    {% for chain in chains %}
+    <li>{{ chain }}</li>
+    {% endfor %}
+</ul>
+<a href="/dashboard">Back to Dashboard</a>
